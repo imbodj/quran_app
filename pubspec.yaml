@@ -1,0 +1,75 @@
+name: quran_app
+description: Application du Noble Coran
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI et design
+  cupertino_icons: ^1.0.6
+
+  # Base de données
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  path_provider: ^2.1.1
+
+  # Partage
+  share_plus: ^13.3.0
+
+  # Gestion d'état
+  provider: ^6.1.1
+
+  # Préférences utilisateur
+  shared_preferences: ^2.2.2
+
+  # Internationalisation
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # Pour ouvrir les liens et emails
+  url_launcher: ^6.2.2
+
+  # Horaires de prière (écran fusionné depuis Waxtu Julli)
+  adhan: ^2.0.0
+  geolocator: ^14.0.3
+  hijri: ^3.0.0
+
+  # Lecteur audio du Coran (récitation, lecture en arrière-plan, contrôles verrouillage d'écran)
+
+  audioplayers: ^6.0.0
+  just_audio_background: ^0.0.1-beta.13
+  audio_session: ^0.1.21
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+  # Générateur d'icônes (DÉPLACÉ ICI)
+  flutter_launcher_icons: ^0.13.1
+# Configuration des icônes (AU NIVEAU RACINE)
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/quran.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#00695C"
+  remove_alpha_ios: true
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/quran.db
+    - assets/audio/
+
+  fonts:
+    - family: Amiri
+      fonts:
+        - asset: fonts/Amiri-Regular.ttf
+        - asset: fonts/Amiri-Bold.ttf
+          weight: 700
