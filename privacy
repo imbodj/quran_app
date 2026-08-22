@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Politique de confidentialité — Le Noble Coran FR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+  h1 { color: #00695C; }
+  h2 { color: #004D40; margin-top: 32px; }
+  footer { margin-top: 48px; color: #666; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Politique de confidentialité</h1>
+<p><strong>Application : Le Noble Coran FR</strong><br>
+Dernière mise à jour : août 2026</p>
+
+<p>Cette application respecte votre vie privée. Voici, en toute transparence, quelles données sont utilisées et comment.</p>
+
+<h2>Données collectées</h2>
+<p>L'application ne collecte, ne stocke et ne transmet <strong>aucune donnée personnelle</strong> vers un serveur. Il n'y a pas de compte utilisateur, pas d'inscription, pas de tracking publicitaire.</p>
+
+<h2>Localisation (horaires de prière)</h2>
+<p>Si vous utilisez la fonction « horaires de prière », l'application demande l'accès à votre position GPS. Cette position est utilisée <strong>uniquement sur votre téléphone</strong>, pour calculer localement les horaires de prière de votre lieu. Elle n'est jamais envoyée à un serveur, ni sauvegardée, ni partagée avec qui que ce soit.
+
+<h2>Récitation audio</h2>
+<p>L'écoute du Coran récité se fait en streaming ou après téléchargement, depuis des serveurs audio publics et gratuits mis à disposition par des projets à but non lucratif dédiés à la diffusion du Coran. Les fichiers audio téléchargés sont stockés localement sur votre téléphone, dans l'espace de stockage privé de l'application, et n'en sortent jamais.</p>
+
+<h2>Connexion Internet</h2>
+<p>Une connexion Internet est utilisée uniquement pour diffuser ou télécharger la récitation audio. Aucune autre donnée n'est échangée.</p>
+
+<h2>Publicité et suivi</h2>
+<p>Cette application ne contient <strong>aucune publicité</strong> et n'utilise <strong>aucun outil de suivi ou d'analyse</strong> (pas de Google Analytics, pas de SDK publicitaire, pas de tracker tiers).</p>
+
+<h2>Contact</h2>
+<p>Pour toute question concernant cette politique de confidentialité, vous pouvez contacter le développeur :</p>
+<p><strong>Ismaila Mbodji</strong><br>
+Email : ismaila.mbodji@education.sn</p>
+
+<footer>
+Cette page doit rester accessible publiquement (ex: via GitHub Pages) pour la soumission Play Store.
+</footer>
+
+</body>
+</html>
