@@ -31,7 +31,7 @@ class _PrayerTimesPageState extends State<PrayerTimesPage>
     with SingleTickerProviderStateMixin {
   static const Map<String, IconData> _prayerIcons = {
     'Fadjr': Icons.bedtime,
-    'Subbah': Icons.light_mode,
+    'Sobh': Icons.light_mode,
     'Tisbar': Icons.sunny,
     'Takussan': Icons.cloud,
     'Timis': Icons.dark_mode,
@@ -143,11 +143,11 @@ class _PrayerTimesPageState extends State<PrayerTimesPage>
 
       final Map<String, DateTime> rawTimes = {
         'Fadjr': amsak,
-        'Subbah': prayerTimes.fajr,
-        'Tisbar': prayerTimes.dhuhr,
-        'Takussan': prayerTimes.asr,
-        'Timis': prayerTimes.maghrib,
-        'Guéwé': prayerTimes.isha,
+        'Sobh': prayerTimes.fajr,
+        'Dhuhr': prayerTimes.dhuhr,
+        'Asr': prayerTimes.asr,
+        'Maghrib': prayerTimes.maghrib,
+        'Isha': prayerTimes.isha,
       };
 
       final Map<String, String> formattedTimes = {};
@@ -193,13 +193,13 @@ class _PrayerTimesPageState extends State<PrayerTimesPage>
         return currentHour >= 4 && currentHour < 6;
       case 'Subbah':
         return currentHour >= 6 && currentHour < 12;
-      case 'Tisbar':
+      case 'Dhuhr':
         return currentHour >= 12 && currentHour < 16;
-      case 'Takussan':
+      case 'Asr':
         return currentHour >= 16 && currentHour < 18;
-      case 'Timis':
+      case 'Maghrib':
         return currentHour >= 18 && currentHour < 20;
-      case 'Guéwé':
+      case 'Isha':
         return currentHour >= 20 || currentHour < 4;
       default:
         return false;
@@ -311,7 +311,7 @@ class _PrayerTimesPageState extends State<PrayerTimesPage>
         bottom: false,
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               top: 10,
               right: -30,
               child: Opacity(

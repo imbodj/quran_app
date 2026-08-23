@@ -49,3 +49,9 @@ key.properties
 .env
 .env.*
 .history/
+
+# Clés de signature Android
+*.jks
+*.keystore
+android/key.properties
+android/app/quran-app-key.jks
