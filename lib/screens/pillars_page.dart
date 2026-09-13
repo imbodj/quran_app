@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quran_app/screens/pillar.dart';
 import '../main.dart' show ThemeProvider;
-
+import 'prayer_description_page.dart';
 
 class PillarsPage extends StatelessWidget {
   const PillarsPage({super.key});
@@ -110,7 +110,63 @@ class PillarDetailPage extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             sliver: SliverToBoxAdapter(child: _buildContent(context, isDark)),
           ),
-          const SliverToBoxAdapter(child: SizedBox(height: 24)),
+          if (pillar.numero == 2)
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              sliver: SliverToBoxAdapter(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(14),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const PrayerDescriptionPage()),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF00695C), Color(0xFF004D40)],
+                          ),
+                          borderRadius: BorderRadius.circular(14),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF00695C).withOpacity(0.35),
+                              blurRadius: 10,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.menu_book, color: Colors.white),
+                            const SizedBox(width: 12),
+                            const Expanded(
+                              child: Text(
+                                'Lire la description détaillée de la prière ﷺ',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14.5,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 16),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 24 + MediaQuery.of(context).viewPadding.bottom),
+          ),
         ],
       ),
     );

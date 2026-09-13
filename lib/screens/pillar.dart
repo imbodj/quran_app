@@ -25,6 +25,13 @@ class Pillar {
   });
 }
 
+/// Une section repliable de la description détaillée de la prière.
+class PrayerSection {
+  final String titre;
+  final List<ContentBlock> contenu;
+  const PrayerSection(this.titre, this.contenu);
+}
+
 /// Les 5 piliers de l'Islam, dans leur ordre canonique.
 /// Contenu repris de l'application Java originale de l'auteur
 /// ("Les Cinq Piliers De L'Islam"), nettoyé et restructuré.
@@ -141,4 +148,137 @@ final List<Pillar> fivePillars = [
           'Il s\'agit d\'un immense rassemblement qui fait prendre conscience aux pèlerins que tous les musulmans sont égaux et méritent leur amour et leur sympathie, quelles que soient leur race ou leur origine ethnique.'),
     ],
   ),
+];
+
+/// Description détaillée de la prière du Prophète ﷺ, du Takbîr au Taslîm.
+/// D'après le Sheikh Muhammad Nâsir ad-Dîn al-Albânî (qu'Allah lui fasse
+/// miséricorde). Organisée en sections repliables (accordéon) pour un
+/// écran dédié, accessible depuis le pilier « Prière ».
+final List<PrayerSection> prayerDescriptionSections = [
+  PrayerSection('1 — S\'orienter vers la Ka\'bah', const [
+    ContentBlock(BlockType.paragraph,
+        'Lorsque tu te lèves pour accomplir la prière, oriente-toi vers la Ka\'bah où que tu sois, qu\'il s\'agisse d\'une prière obligatoire ou surérogatoire. C\'est un pilier de la prière sans lequel celle-ci n\'est pas valide.'),
+    ContentBlock(BlockType.paragraph, 'Cette obligation tombe dans certains cas :'),
+    ContentBlock(BlockType.listItem, 'Pour le combattant lors de la prière de peur ou d\'un combat intense.'),
+    ContentBlock(BlockType.listItem,
+        'Pour la personne incapable de le faire, comme le malade, ou celle qui se trouve dans un bateau, une voiture ou un avion, si elle craint de laisser sortir la prière de son temps prescrit.'),
+    ContentBlock(BlockType.listItem,
+        'Pour celui qui prie une prière surérogatoire ou le Witr tout en se déplaçant à monture.'),
+    ContentBlock(BlockType.paragraph,
+        'Celui qui aperçoit la Ka\'bah doit s\'orienter exactement vers sa structure ; celui qui ne la voit pas s\'oriente vers sa direction générale. Si une personne prie dans une autre direction après un effort sincère d\'appréciation (temps couvert, etc.), sa prière reste valide.'),
+  ]),
+  PrayerSection('2 — La station debout (Al-Qiyâm)', const [
+    ContentBlock(BlockType.paragraph, 'Il est obligatoire de prier debout, car c\'est un pilier de la prière, sauf :'),
+    ContentBlock(BlockType.listItem, 'Pour celui qui prie la prière de peur : il lui est permis de prier chevauchant.'),
+    ContentBlock(BlockType.listItem,
+        'Pour le malade incapable de rester debout : il prie assis s\'il le peut, sinon couché sur le côté.'),
+    ContentBlock(BlockType.listItem,
+        'Pour celui qui accomplit une prière surérogatoire : il peut prier assis ou sur sa monture, en s\'inclinant et se prosternant par des gestes de la tête.'),
+    ContentBlock(BlockType.paragraph,
+        'Il est permis de prier pieds nus ou chaussé. Il est permis à l\'imam de prier sur un endroit surélevé (comme le minbar) dans un but pédagogique.'),
+  ]),
+  PrayerSection('3 — Prier vers une Sutrah (obstacle)', const [
+    ContentBlock(BlockType.paragraph,
+        'Il est obligatoire de prier vers une sutrah, en mosquée ou ailleurs, et de s\'en approcher suffisamment. Sa hauteur doit être d\'environ un empan ou deux.'),
+    ContentBlock(BlockType.listItem, 'Il est absolument interdit de prier en direction des tombes.'),
+    ContentBlock(BlockType.listItem,
+        'Il est interdit de passer immédiatement devant une personne en train de prier si elle dispose d\'une sutrah.'),
+    ContentBlock(BlockType.listItem,
+        'Celui qui prie vers une sutrah doit empêcher quiconque de passer devant lui ; il peut faire un pas en avant pour repousser un animal ou un enfant.'),
+    ContentBlock(BlockType.paragraph,
+        'L\'importance de la sutrah tient notamment au fait qu\'elle empêche l\'annulation de la prière si une femme pubère, un âne ou un chien noir passent devant le prieur.'),
+  ]),
+  PrayerSection('4 — L\'intention (An-Niyyah)', const [
+    ContentBlock(BlockType.paragraph,
+        'Le prieur doit avoir l\'intention de la prière pour laquelle il s\'est levé. Son emplacement est le cœur — la prononcer à voix haute avec la langue est une innovation contraire à la Sunnah, car ni le Prophète ﷺ ni ses compagnons ne l\'ont fait.'),
+  ]),
+  PrayerSection('5 — Le Takbîr', const [
+    ContentBlock(BlockType.paragraph,
+        'Il débute la prière en disant « Allâhu Akbar » (Allah est le plus Grand) — c\'est un pilier. Il n\'élève la voix avec le Takbîr que s\'il est imam ; le fidèle guidé ne le prononce qu\'une fois que l\'imam a terminé le sien.'),
+    ContentBlock(BlockType.paragraph,
+        'Il lève les mains, doigts étendus sans les serrer ni les écarter, à hauteur des épaules (parfois jusqu\'au bas des oreilles), puis place sa main droite sur sa main gauche, sur la poitrine uniquement. Il fixe son regard sur son lieu de prosternation, sans lever les yeux vers le ciel.'),
+  ]),
+  PrayerSection('6 — L\'invocation d\'ouverture (Du\'â\' al-Istiftâh)', const [
+    ContentBlock(BlockType.paragraph, 'Il débute la récitation par l\'une des invocations établies, la plus célèbre étant :'),
+    ContentBlock(BlockType.quote,
+        '« Allâhumma bâ\'id baynî wa bayna khatâyâya kamâ bâ\'adta bayna al-mashriqi wa al-maghrib, Allâhumma naqqinî min khatâyâya kamâ yunaqqâ ath-thawbu al-abyadu mina ad-danas, Allâhumma-ghsilnî min khatâyâya bi-th-thalji wa al-mâ\'i wa al-barad » (Ô Allah, éloigne de moi mes péchés comme Tu as éloigné l\'Orient de l\'Occident. Ô Allah, purifie-moi de mes péchés comme on purifie le vêtement blanc de sa saleté. Ô Allah, lave-moi de mes péchés avec la neige, l\'eau et la grêle.)'),
+    ContentBlock(BlockType.paragraph, 'Ou bien :'),
+    ContentBlock(BlockType.quote,
+        '« Subhânaka Allâhumma wa bi-hamdika wa tabâraka-smuka wa ta\'âlâ jadduka wa lâ ilâha ghayruk » (Gloire et pureté à Toi ô Allah, et à Toi la louange, que Ton nom soit béni, que Ta majesté soit élevée, et il n\'y a d\'autre divinité digne d\'adoration en dehors de Toi.)'),
+  ]),
+  PrayerSection('7 — La récitation (Al-Qirâ\'ah)', const [
+    ContentBlock(BlockType.paragraph, 'Il cherche ensuite refuge auprès d\'Allah :'),
+    ContentBlock(BlockType.quote,
+        '« A\'ûdhu bi-Llâhi mina ash-shaytâni ar-rajîmi min hamzihi wa nafkhihi wa nafthihi » (Je cherche refuge auprès d\'Allah contre le diable banni, contre ses incitations, son orgueil et sa poésie.)'),
+    ContentBlock(BlockType.paragraph, 'Puis, à voix basse dans toutes les prières :'),
+    ContentBlock(BlockType.quote, '« Bismi-Llâhi ar-Rahmâni ar-Rahîm » (Au nom d\'Allah, le Tout Miséricordieux, le Très Miséricordieux.)'),
+    ContentBlock(BlockType.paragraph,
+        'Il récite ensuite la sourate Al-Fâtihah en entier — un pilier sans lequel la prière n\'est pas valide — en marquant une pause à la fin de chaque verset. Elle est également obligatoire pour le fidèle guidé dans les prières à voix basse. À la fin, il dit « Âmîn ». Il récite ensuite une autre sourate ou quelques versets dans les deux premières rak\'ah.'),
+    ContentBlock(BlockType.listItem,
+        'Récitation à voix haute : Fajr, Vendredi, les deux Aïds, la demande de pluie, l\'éclipse, et les deux premières rak\'ah du Maghrib et de l\'Isha.'),
+    ContentBlock(BlockType.listItem,
+        'Récitation à voix basse : Dhuhr, Asr, la troisième rak\'ah du Maghrib et les deux dernières rak\'ah de l\'Isha.'),
+  ]),
+  PrayerSection('8 — L\'inclination (Ar-Rukû\')', const [
+    ContentBlock(BlockType.paragraph,
+        'Après une légère pause, il lève les mains et prononce le Takbîr en s\'inclinant. Il pose ses paumes sur ses genoux en écartant les doigts, étend son dos bien droit, ne relève ni ne baisse trop la tête, écarte ses coudes des flancs, et observe un temps d\'immobilité (Tumaniyyah) — un pilier de la prière.'),
+    ContentBlock(BlockType.paragraph, 'Il dit, trois fois ou plus :'),
+    ContentBlock(BlockType.quote, '« Subhâna Rabbî al-\'Adhîm » (Gloire à mon Seigneur le Très Grand.)'),
+    ContentBlock(BlockType.paragraph, 'Ou :'),
+    ContentBlock(BlockType.quote,
+        '« Subhânaka Allâhumma Rabbanâ wa bi-hamdika Allâhumma-ghfirlî » (Gloire et pureté à Toi, ô Allah notre Seigneur, et à Toi la louange. Ô Allah, pardonne-moi.)'),
+  ]),
+  PrayerSection('9 — Le redressement de l\'inclination (Al-I\'tidâl)', const [
+    ContentBlock(BlockType.paragraph, 'Il se redresse en disant :'),
+    ContentBlock(BlockType.quote, '« Sami\'a Allâhu li-man hamidah » (Allah écoute celui qui Le loue.)'),
+    ContentBlock(BlockType.paragraph, 'Puis, une fois debout et apaisé :'),
+    ContentBlock(BlockType.quote,
+        '« Rabbanâ wa laka al-hamd, hamdan kathîran tayyiban mubârakan fîh » (Notre Seigneur, à Toi la louange, une louange abondante, pure et bénie.)'),
+    ContentBlock(BlockType.paragraph, 'Il prolonge cette station debout, d\'une durée proche de son inclination.'),
+  ]),
+  PrayerSection('10 — La prosternation (As-Sujûd)', const [
+    ContentBlock(BlockType.paragraph,
+        'Il prononce le Takbîr et descend se prosterner, mains posées au sol avant les genoux. Il prend appui sur ses paumes étendues orientées vers la Qiblah, à hauteur des épaules, décolle ses avant-bras du sol, applique fermement front, nez, genoux et orteils au sol, dresse ses pieds orientés vers la Qiblah, talons collés l\'un à l\'autre, et observe la quiétude — un pilier.'),
+    ContentBlock(BlockType.paragraph, 'Il dit, trois fois ou plus :'),
+    ContentBlock(BlockType.quote, '« Subhâna Rabbî al-A\'lâ » (Gloire à mon Seigneur le Très-Haut.)'),
+    ContentBlock(BlockType.paragraph,
+        'Il est recommandé de multiplier les invocations pendant la prosternation, le moment où le serviteur est le plus proche de son Seigneur.'),
+  ]),
+  PrayerSection('11 — L\'assise entre les deux prosternations', const [
+    ContentBlock(BlockType.paragraph,
+        'Il relève la tête en prononçant le Takbîr, replie le pied gauche et s\'assoit dessus (pied droit dressé), demeure paisible jusqu\'à ce que chaque os reprenne sa place, et dit :'),
+    ContentBlock(BlockType.quote,
+        '« Allâhumma-ghfirlî, wa-rhamnî, wa-jburnî, wa-rfa\'nî, wa-\'âfinî, wa-rzuqnî » (Ô Allah, pardonne-moi, fais-moi miséricorde, panse mes blessures, élève-moi, accorde-moi le salut et attribue-moi ma subsistance.)'),
+    ContentBlock(BlockType.paragraph, 'Ou plus simplement : « Rabbi-ghfirlî, Rabbi-ghfirlî » (Seigneur, pardonne-moi, Seigneur, pardonne-moi).'),
+  ]),
+  PrayerSection('12 — La seconde prosternation et l\'assise de repos', const [
+    ContentBlock(BlockType.paragraph,
+        'Il accomplit la seconde prosternation de la même manière. En relevant la tête, il s\'assoit un court instant, bien droit (assise de repos), puis se relève pour la deuxième rak\'ah en prenant appui sur ses mains fermées — sans y réciter l\'invocation d\'ouverture cette fois.'),
+  ]),
+  PrayerSection('13 — Le premier Tashahhud', const [
+    ContentBlock(BlockType.paragraph,
+        'Il s\'assoit en position d\'Iftirâsh (pied gauche couché sous soi, pied droit dressé), paumes posées sur les cuisses. Il replie les doigts de sa main droite, pointe l\'index vers la Qiblah en le bougeant durant toute l\'invocation, et récite :'),
+    ContentBlock(BlockType.quote,
+        '« At-Tahiyyâtu li-Llâhi wa ass-Salawâtu wa at-Tayyibât. As-Salâmu \'alayka ayyuhâ an-Nabiyyu wa rahmatu-Llâhi wa barakâtuh. As-Salâmu \'alaynâ wa \'alâ \'ibâdi-Llâhi as-sâlihîn. Ash-hadu an lâ ilâha illâ-Llâhu wa ash-hadu anna Muhammadan \'abduhu wa rasûluh » (Les salutations sont pour Allah, ainsi que les prières et les bonnes œuvres. Que le salut soit sur toi, ô Prophète, ainsi que la miséricorde d\'Allah et Ses bénédictions. Que le salut soit sur nous et sur les pieux serviteurs d\'Allah. J\'atteste qu\'il n\'y a pas de divinité digne d\'adoration en dehors d\'Allah, et j\'atteste que Muhammad est Son serviteur et Son messager.)'),
+    ContentBlock(BlockType.paragraph, 'Puis il prie sur le Prophète ﷺ :'),
+    ContentBlock(BlockType.quote,
+        '« Allâhumma salli \'alâ Muhammadin wa \'alâ âli Muhammad, kamâ sallayta \'alâ Ibrâhîma wa \'alâ âli Ibrâhîm, innaka Hamîdun Majîd. Allâhumma bârik \'alâ Muhammadin wa \'alâ âli Muhammad, kamâ bârakta \'alâ Ibrâhîma wa \'alâ âli Ibrâhîm, innaka Hamîdun Majîd. » (Ô Allah, prie sur Muhammad et sur la famille de Muhammad, comme Tu as prié sur Ibrahim et sur la famille d\'Ibrahim, Tu es certes digne de louange et de gloire. Ô Allah, bénis Muhammad et la famille de Muhammad, comme Tu as béni Ibrahim et la famille d\'Ibrahim, Tu es certes digne de louange et de gloire.)'),
+  ]),
+  PrayerSection('14 — Les deux dernières rak\'ah', const [
+    ContentBlock(BlockType.paragraph,
+        'Il accomplit les deux dernières rak\'ah de la même manière, en n\'y récitant que la Fâtihah — parfois complétée de quelques versets au Dhuhr.'),
+  ]),
+  PrayerSection('15 — Le dernier Tashahhud et le Tawarruk', const [
+    ContentBlock(BlockType.paragraph,
+        'Pour le dernier Tashahhud d\'une prière de trois ou quatre rak\'ah, il s\'assoit en position de Tawarruk : les deux pieds sortis du même côté, fesse gauche posée au sol. Il récite la prière sur le Prophète ﷺ et le Tashahhud comme précédemment, puis cherche obligatoirement refuge auprès d\'Allah contre quatre choses :'),
+    ContentBlock(BlockType.quote,
+        '« Allâhumma innî a\'ûdhu bika min \'adhâbi jahannam, wa min \'adhâbi al-qabr, wa min fitnati al-mahya wa al-mamât, wa min sharri fitnati al-masîhi ad-dajjâl » (Ô Allah, je cherche refuge auprès de Toi contre le châtiment de l\'Enfer, contre le châtiment de la tombe, contre l\'épreuve de la vie et de la mort, et contre le mal de l\'épreuve de l\'Antéchrist.)'),
+    ContentBlock(BlockType.paragraph, 'Il invoque ensuite pour lui-même avec les formules rapportées dans le Coran et la Sunnah.'),
+  ]),
+  PrayerSection('16 — La salutation finale (At-Taslîm)', const [
+    ContentBlock(BlockType.paragraph, 'Il salue sur sa droite, jusqu\'à voir la blancheur de sa joue droite :'),
+    ContentBlock(BlockType.quote, '« As-Salâmu \'alaykum wa rahmatu-Llâhi wa barakâtuh » (Que la paix, la miséricorde et les bénédictions d\'Allah soient sur vous.)'),
+    ContentBlock(BlockType.paragraph, 'Puis sur sa gauche :'),
+    ContentBlock(BlockType.quote, '« As-Salâmu \'alaykum wa rahmatu-Llâh » (Que la paix et la miséricorde d\'Allah soient sur vous.)'),
+  ]),
 ];
